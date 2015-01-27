@@ -28,26 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.altertime = new System.Windows.Forms.Label();
             this.IsEnable = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.state = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(12, 35);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(154, 42);
+            this.button1.Size = new System.Drawing.Size(129, 42);
             this.button1.TabIndex = 0;
             this.button1.Text = "启动更新hosts";
             this.button1.UseVisualStyleBackColor = true;
@@ -85,12 +82,6 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "管理员权限：";
             // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
-            // 
             // altertime
             // 
             this.altertime.AutoSize = true;
@@ -107,17 +98,6 @@
             this.IsEnable.Name = "IsEnable";
             this.IsEnable.Size = new System.Drawing.Size(0, 12);
             this.IsEnable.TabIndex = 6;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.ErrorImage = null;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(38, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(104, 36);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
             // 
             // state
             // 
@@ -139,14 +119,24 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "执行进度：";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(13, 13);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(126, 16);
+            this.checkBox1.TabIndex = 12;
+            this.checkBox1.Text = "hosts增加只读属性";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(353, 311);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.state);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.IsEnable);
             this.Controls.Add(this.altertime);
             this.Controls.Add(this.label3);
@@ -161,8 +151,6 @@
             this.Name = "Form1";
             this.Text = "GOOGLE HOSTS修改神器v1.5";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,12 +162,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Label altertime;
         private System.Windows.Forms.Label IsEnable;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox state;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 

@@ -17,16 +17,18 @@ namespace WindowsFormsApplication2
         {
             InitializeComponent();
         }
-        
+        string HTMLstr;
 
         private void button1_Click(object sender, EventArgs e)
         {
             state.Text = null;
 
-
-            string text = WEB.request();
-            text = text.Replace("<br />", "\r\n");
-            if (text != "")
+            if (HTMLstr.Length == 0)  //如果启动时没有获取到那就再获取一次。
+            {
+                HTMLstr = WEB.request();
+            }
+            string text = HTMLstr.Replace("<br />", "\r\n");
+            if (text.Length != 0)
             {
             int begin = text.IndexOf("#base services");   //记录开始位置和结束位置，截取中间字符串。
             int end = text.IndexOf("#google hosts 2015 end");
@@ -87,9 +89,11 @@ namespace WindowsFormsApplication2
                     System.IO.File.WriteAllText(path, text1);
                     state.Text += "已创建新的hosts文件并写入" + n;
 
-
-                    fileInfo.Attributes |= FileAttributes.ReadOnly;
-                    state.Text += "已为hosts文件设置只读属性。";
+                    if (checkBox1.Checked == true)
+                    {
+                        fileInfo.Attributes |= FileAttributes.ReadOnly;
+                        state.Text += "已为hosts文件设置只读属性。";
+                    }
                     label1.Text = "修改状态：成功！畅游吧。";
 
                 }
@@ -128,16 +132,16 @@ namespace WindowsFormsApplication2
                 label3.Text += "未获取。";
             //设置显示hosts 更新时间。
 
-            string text = WEB.request();  //捕捉网站
-            if (text == "")
+            HTMLstr = WEB.request();  //捕捉网站
+            if (HTMLstr.Length == 0)
             { altertime.Text += "获取失败！";
               state.Text += "网络连接失败或者程序目前不可用，请联系作者获取最新版本。"+n;   
             }
             else
             {
-                string[] date = draw.drawDate(text);
-                altertime.Text += date[0];
- 
+                string[] date = draw.drawDate(HTMLstr);
+                altertime.Text += "20"+date[0];
+
             }
             if (IsInternet.Network())
             {
@@ -146,29 +150,7 @@ namespace WindowsFormsApplication2
 
 
         }
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Minimized)
-            {
 
-                e.Cancel= true;         //取消关闭窗体事件
-                notifyIcon1.Visible = true;
-                this.Hide();
-                this.ShowInTaskbar = false;
-            }
-            
-        }
 
-        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            if (this.ShowInTaskbar == false)
-            {
-                notifyIcon1.Visible = true;
-                this.ShowInTaskbar = false;
-                this.Show();
-                this.Activate();
-                this.WindowState = FormWindowState.Normal;
-            }
-        }
     }
 }
