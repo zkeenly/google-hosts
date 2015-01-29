@@ -140,7 +140,9 @@ namespace WindowsFormsApplication2
             else
             {
                 string[] date = draw.drawDate(HTMLstr);
-                altertime.Text += "20"+date[0];
+
+                altertime.Text += "20" + date[0];
+
 
             }
             if (IsInternet.Network())
