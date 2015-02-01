@@ -12,6 +12,7 @@ namespace WindowsFormsApplication2
 {
     public partial class Form1 : Form
     {
+        
         string n = Environment.NewLine;
         public Form1()
         {
@@ -21,32 +22,21 @@ namespace WindowsFormsApplication2
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             state.Text = null;
 
             if (HTMLstr.Length == 0)  //如果启动时没有获取到那就再获取一次。
             {
-                HTMLstr = WEB.request();
+                HTMLstr = WEB.request(websrc.Text);
             }
             string text = HTMLstr.Replace("<br />", "\r\n");
             if (text.Length != 0)
             {
-            int begin = text.IndexOf("#base services");   //记录开始位置和结束位置，截取中间字符串。
-            int end = text.IndexOf("#google hosts 2015 end");
+            int begin = text.IndexOf(hostsstart.Text);   //记录开始位置和结束位置，截取中间字符串。
+            int end = text.IndexOf(hostsend.Text);
             text = text.Substring(begin,end-begin+2);
 
             string text1 = NoHtml.NoHTML(text);
-           // text1 = text1.Replace("\r","\r\n");
-
-            //string textall = "";
-
-            //string[] drawip = draw.drawIP(text);
-            //string[] drawurl = draw.drawUrl(text);
-
-            //for (int i = 0; i < drawip.Length; i++)
-            //{
-            //    textall += drawip[i] + " " + drawurl[i]+Environment.NewLine+"\r\n";
-            //}
-
 
    
                 string dnspath = @"c:\windows\system32\drivers\etc\dns.bat";
@@ -70,7 +60,7 @@ namespace WindowsFormsApplication2
                 {
                     state.Text += "清理DNS缓存失败" + n;
                 }
-                string path = @"c:\windows\system32\drivers\etc\HOSTS";  //host文件地址。
+                string path = hostspath.Text;  //host文件地址。
                 FileInfo fileInfo = new FileInfo(path);
                 try
                 {
@@ -113,15 +103,7 @@ namespace WindowsFormsApplication2
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -132,7 +114,7 @@ namespace WindowsFormsApplication2
                 label3.Text += "未获取。";
             //设置显示hosts 更新时间。
 
-            HTMLstr = WEB.request();  //捕捉网站
+            HTMLstr = WEB.request(websrc.Text);  //捕捉网站
             if (HTMLstr.Length == 0)
             { altertime.Text += "获取失败！";
               state.Text += "网络连接失败或者程序目前不可用，请联系作者获取最新版本。"+n;   
@@ -140,8 +122,8 @@ namespace WindowsFormsApplication2
             else
             {
                 string[] date = draw.drawDate(HTMLstr);
-
                 altertime.Text += "20" + date[0];
+
 
 
             }
@@ -151,6 +133,12 @@ namespace WindowsFormsApplication2
             }
 
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            
         }
 
 

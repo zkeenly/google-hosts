@@ -11,16 +11,16 @@ using System.Net;
 using System.Web;
 namespace WindowsFormsApplication2
 {
-    public static class WEB
+    public static class WEB 
     {
         //请求一个web 网站的数据
-        public static string request()
+        public static string request(string websrc)
         {
             string text;
             try
             {
 
-                WebRequest request = WebRequest.Create("http://www.360kb.com/kb/2_122.html" );
+                WebRequest request = WebRequest.Create(websrc);
 
                 WebResponse response = request.GetResponse();
                 StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.GetEncoding("gb2312"));

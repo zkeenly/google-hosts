@@ -83,7 +83,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="NoHtml.cs" />
-    <Compile Include="WEB.cs" />
+    <Compile Include="WEB.cs">
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="20150102091711263_easyicon_net_64.ico" />

@@ -29,7 +29,7 @@ namespace WindowsFormsApplication2
          * 返回所有的日期数据**/
         public static string[] drawDate(string strHTML)
         {
-            string pattern = "\\d{2}[\\.-/][012]\\d[\\.-/][0123]\\d";
+            string pattern = "\\d{2}[\\.-/][01]{0,1}\\d[\\.-/][0123]{0,1}\\d";
             return drawAll(strHTML, pattern);
         }
 
