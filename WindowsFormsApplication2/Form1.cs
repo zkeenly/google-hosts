@@ -24,7 +24,18 @@ namespace WindowsFormsApplication2
         {
             
             state.Text = null;
+            HTMLstr = WEB.request(websrc.Text);  //捕捉网站
 
+            if (HTMLstr.Length == 0)
+            {
+                altertime.Text += "获取失败！";
+                state.Text += "网络连接失败或者程序目前不可用，请联系作者获取最新版本。" + n;
+            }
+            else
+            {
+                string[] date = draw.drawDate(HTMLstr);
+                altertime.Text ="hosts更新时间：20"+date[0];
+            }
             if (HTMLstr.Length == 0)  //如果启动时没有获取到那就再获取一次。
             {
                 HTMLstr = WEB.request(websrc.Text);
@@ -123,9 +134,6 @@ namespace WindowsFormsApplication2
             {
                 string[] date = draw.drawDate(HTMLstr);
                 altertime.Text += "20" + date[0];
-
-
-
             }
             if (IsInternet.Network())
             {
