@@ -152,6 +152,7 @@
             this.websrc.Size = new System.Drawing.Size(240, 21);
             this.websrc.TabIndex = 14;
             this.websrc.Text = "http://www.360kb.com/kb/2_150.html";
+            this.websrc.TextChanged += new System.EventHandler(this.websrc_TextChanged);
             // 
             // hostsstart
             // 
