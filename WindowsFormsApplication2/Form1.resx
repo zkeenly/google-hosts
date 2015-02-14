@@ -119,6 +119,7 @@
   </resheader>
   <data name="textBox1.Text" xml:space="preserve">
     <value>★注意hosts更新时间，若无法使用google请重新更新！
+★若本软件无法使用，请到右侧GITHUB连接下载最新版本。
 软件说明：
 注1：请使用chrome浏览器，并在地址栏里输入 chrome://flags/，然后查找QUIC，启用该协议，同时建议启用SPDY/4，能让访问更流畅。
 注2：请使用https的方式访问，比如：https://www.google.com

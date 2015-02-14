@@ -47,7 +47,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.gitsrc = new System.Windows.Forms.TextBox();
+            this.uptime = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -80,6 +81,7 @@
             this.textBox1.Size = new System.Drawing.Size(328, 107);
             this.textBox1.TabIndex = 3;
             this.textBox1.Text = resources.GetString("textBox1.Text");
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label3
             // 
@@ -115,7 +117,7 @@
             this.state.Name = "state";
             this.state.ReadOnly = true;
             this.state.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.state.Size = new System.Drawing.Size(328, 69);
+            this.state.Size = new System.Drawing.Size(328, 60);
             this.state.TabIndex = 9;
             // 
             // label4
@@ -215,21 +217,30 @@
             this.label8.TabIndex = 21;
             this.label8.Text = "GITHUB：";
             // 
-            // textBox2
+            // gitsrc
             // 
-            this.textBox2.Location = new System.Drawing.Point(384, 29);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(240, 21);
-            this.textBox2.TabIndex = 22;
-            this.textBox2.Text = "https://github.com/e10my/google-hosts";
+            this.gitsrc.Location = new System.Drawing.Point(384, 29);
+            this.gitsrc.Name = "gitsrc";
+            this.gitsrc.ReadOnly = true;
+            this.gitsrc.Size = new System.Drawing.Size(240, 21);
+            this.gitsrc.TabIndex = 22;
+            this.gitsrc.Text = "https://github.com/e10my/google-hosts";
+            // 
+            // uptime
+            // 
+            this.uptime.AutoSize = true;
+            this.uptime.Location = new System.Drawing.Point(16, 293);
+            this.uptime.Name = "uptime";
+            this.uptime.Size = new System.Drawing.Size(0, 12);
+            this.uptime.TabIndex = 23;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(653, 311);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.uptime);
+            this.Controls.Add(this.gitsrc);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -281,7 +292,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox gitsrc;
+        private System.Windows.Forms.Label uptime;
     }
 }
 

@@ -8,6 +8,13 @@ namespace WindowsFormsApplication2
     class draw
     {
 
+        public static string getmid(string begin, string end, string text)
+        {
+            int start = text.IndexOf(begin);   //记录开始位置和结束位置，截取中间字符串。
+            int stop = text.IndexOf(end);
+            return text.Substring(start, stop - start + 2);
+
+        }
         /**
          返回所有的IP数据*/
         public static string[] drawIP(string strHTML)
