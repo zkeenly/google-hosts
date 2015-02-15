@@ -136,7 +136,7 @@ namespace WindowsFormsApplication2
             HTMLstr = WEB.request(websrc.Text);  //捕捉网站
             if (gittime.Length == 0)  //获取github上面源代码
             {
-                uptime.Text = "软件最新版本获取失败！请手动打开github链接查看。";
+                uptime.Text = "软件最新版本获取失败！请手动打开github链接查看。+";
             }
             if (HTMLstr.Length == 0)
             { altertime.Text = hoststime+"获取失败！";
@@ -154,7 +154,7 @@ namespace WindowsFormsApplication2
                 try
                 {
 
-                    uptime.Text = "最近更新：" + draw.getmid("<<",">>",gittime);
+                    uptime.Text = "最近更新：" + HTMLstr;
                 }
                 catch (Exception)
                 { uptime.Text = "软件最新版本获取失败！请手动打开github链接查看。"; }
