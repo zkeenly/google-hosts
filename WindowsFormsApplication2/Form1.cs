@@ -132,12 +132,9 @@ namespace WindowsFormsApplication2
             else
                 label3.Text += "未获取。";
             //设置显示hosts 更新时间。
-            string gittime = WEB.request(gitsrc.Text);
+
             HTMLstr = WEB.request(websrc.Text);  //捕捉网站
-            if (gittime.Length == 0)  //获取github上面源代码
-            {
-                uptime.Text = "软件最新版本获取失败！请手动打开github链接查看。+";
-            }
+
             if (HTMLstr.Length == 0)
             { altertime.Text = hoststime+"获取失败！";
               state.Text = "网络连接失败或者程序目前不可用，请联系作者获取最新版本。"+ n + state.Text;   
@@ -151,13 +148,7 @@ namespace WindowsFormsApplication2
                 }
                 catch (Exception)
                 { altertime.Text = hoststime+"获取失败！"; }
-                try
-                {
 
-                    uptime.Text = "最近更新：" + HTMLstr;
-                }
-                catch (Exception)
-                { uptime.Text = "软件最新版本获取失败！请手动打开github链接查看。"; }
 
             }
 

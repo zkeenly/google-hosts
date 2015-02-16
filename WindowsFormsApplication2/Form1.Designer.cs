@@ -43,12 +43,8 @@
             this.hostsstart = new System.Windows.Forms.TextBox();
             this.hostsend = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.gitsrc = new System.Windows.Forms.TextBox();
-            this.uptime = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -154,6 +150,7 @@
             this.websrc.Size = new System.Drawing.Size(240, 21);
             this.websrc.TabIndex = 14;
             this.websrc.Text = "http://www.360kb.com/kb/2_150.html";
+            this.websrc.Visible = false;
             this.websrc.TextChanged += new System.EventHandler(this.websrc_TextChanged);
             // 
             // hostsstart
@@ -163,6 +160,7 @@
             this.hostsstart.Size = new System.Drawing.Size(240, 21);
             this.hostsstart.TabIndex = 15;
             this.hostsstart.Text = "#base services";
+            this.hostsstart.Visible = false;
             // 
             // hostsend
             // 
@@ -171,6 +169,7 @@
             this.hostsend.Size = new System.Drawing.Size(240, 21);
             this.hostsend.TabIndex = 16;
             this.hostsend.Text = "#google source end";
+            this.hostsend.Visible = false;
             // 
             // label2
             // 
@@ -180,33 +179,6 @@
             this.label2.Size = new System.Drawing.Size(95, 12);
             this.label2.TabIndex = 17;
             this.label2.Text = "hosts文件位置：";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(384, 121);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 12);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "网站地址：";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(384, 184);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 12);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "hosts起始位置：";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(384, 242);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(95, 12);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "hosts结束位置：";
             // 
             // label8
             // 
@@ -226,25 +198,13 @@
             this.gitsrc.TabIndex = 22;
             this.gitsrc.Text = "https://github.com/e10my/google-hosts";
             // 
-            // uptime
-            // 
-            this.uptime.AutoSize = true;
-            this.uptime.Location = new System.Drawing.Point(16, 293);
-            this.uptime.Name = "uptime";
-            this.uptime.Size = new System.Drawing.Size(0, 12);
-            this.uptime.TabIndex = 23;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(653, 311);
-            this.Controls.Add(this.uptime);
             this.Controls.Add(this.gitsrc);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.hostsend);
             this.Controls.Add(this.hostsstart);
@@ -288,12 +248,8 @@
         private System.Windows.Forms.TextBox hostsstart;
         private System.Windows.Forms.TextBox hostsend;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox gitsrc;
-        private System.Windows.Forms.Label uptime;
     }
 }
 
