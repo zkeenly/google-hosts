@@ -168,7 +168,7 @@
             this.hostsend.Name = "hostsend";
             this.hostsend.Size = new System.Drawing.Size(240, 21);
             this.hostsend.TabIndex = 16;
-            this.hostsend.Text = "#google source end";
+            this.hostsend.Text = "#google hosts 2015 end";
             this.hostsend.Visible = false;
             // 
             // label2
